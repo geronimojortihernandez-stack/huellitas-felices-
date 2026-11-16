@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d18">
+  <meta name="description" content="Huellitas Felices: adopción responsable de perros, gatos y otras mascotas. Adoptá responsablemente y ayudanos a encontrar hogares.">
+  <title>Huellitas Felices | Adoptá amor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="brand" href="#inicio" aria-label="Huellitas Felices, inicio">
+      <span class="brand-paw">🐾</span>
+      <span>
+        <strong>Huellitas <em>Felices</em></strong>
+        <small>ADOPTÁ · AMÁ · CUIDÁ</small>
+      </span>
+    </a>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <nav class="side-menu" id="sideMenu" aria-label="Menú principal">
+    <div class="menu-heading">🐾 Huellitas Felices</div>
+    <a href="#inicio">⌂ Inicio</a>
+    <a href="#adopciones">♡ Mascotas en adopción</a>
+    <a href="#mascota-del-mes">⭐ Mascota del mes</a>
+    <a href="#dar-en-adopcion">🐾 Dar una camada en adopción</a>
+    <a href="#proceso">✦ Cómo adoptar</a>
+    <a href="#requisitos">✓ Requisitos</a>
+    <a href="#nosotros">♥ Sobre nosotros</a>
+    <a href="#preguntas">❔ Preguntas frecuentes</a>
+    <a href="#contacto">✉ Contacto</a>
+    <p class="menu-note">Cada huellita merece una familia.</p>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">UN HOGAR CAMBIA TODO</p>
+        <h1>Encontrá tu<br><span>compañero ideal</span> ♡</h1>
+        <p class="hero-copy">Una segunda oportunidad puede convertirse en una amistad para toda la vida. Hay una huellita esperando por vos.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#adopciones">🐾 Ver mascotas <span>→</span></a>
+          <a class="secondary-button" href="#dar-en-adopcion">Tengo una camada</a>
+        </div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Cachorritos y gatitos descansando juntos"></div>
+      <div class="hero-sticker">La adopción<br>hace la diferencia <b>🐾</b></div>
+    </section>
+
+    <div class="quick-links" aria-label="Accesos rápidos">
+      <a href="#inicio">⌂ <span>Inicio</span></a>
+      <a href="#adopciones">🐾 <span>En adopción</span></a>
+      <a href="#dar-en-adopcion">♡ <span>Dar en adopción</span></a>
+      <a href="#proceso">✦ <span>Cómo adoptar</span></a>
+      <a href="#contacto">✉ <span>Contacto</span></a>
+    </div>
+
+    <section class="adoptions section-wrap" id="adopciones">
+      <div class="section-heading">
+        <p class="eyebrow">AMOR CON CUATRO PATITAS</p>
+        <h2>Mascotas en <span>adopción</span> 🐾</h2>
+        <p>Conocé perros, gatos, conejos, aves y otros pequeños compañeros. Elegí uno y contanos qué nombre te gustaría darle.</p>
+      </div>
+
+      <section class="featured-pet" id="mascota-del-mes">
+        <div class="featured-photo">
+          <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1000&q=85" alt="Conejito blanco, mascota destacada del mes">
+          <span class="featured-ribbon">⭐ MASCOTA DEL MES</span>
+        </div>
+        <div class="featured-content">
+          <p class="eyebrow">UNA ESTRELLA QUE BUSCA FAMILIA</p>
+          <h3>¡Te presentamos a Copito! 🐰</h3>
+          <p>Copito es nuestro protagonista destacado. Es un conejito dulce y curioso que necesita un hogar tranquilo, seguro y preparado para brindarle cuidados adecuados.</p>
+          <p class="featured-detail">🐾 Especie: Conejo · Edad: consultar · Disponibilidad: confirmar con el equipo</p>
+          <a class="primary-button" href="https://wa.me/5493757415396?text=Hola%2C%20quiero%20consultar%20por%20Copito%2C%20la%20mascota%20del%20mes." target="_blank" rel="noopener">Consultar por Copito 💜</a>
+        </div>
+      </section>
+
+      <div class="filter-row">
+        <div class="filters" role="group" aria-label="Filtrar mascotas">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="perro">🐶 Perritos</button>
+          <button class="filter" data-filter="gato">🐱 Gatitos</button>
+          <button class="filter" data-filter="conejo">🐰 Conejos</button>
+          <button class="filter" data-filter="ave">🦜 Aves</button>
+          <button class="filter" data-filter="otro">🐹 Otros</button>
+        </div>
+        <label class="search-box">⌕ <input id="petSearch" type="search" placeholder="Buscar por nombre..." aria-label="Buscar por nombre"></label>
+      </div>
+
+      <div class="pet-grid" id="petGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos mascotas con ese nombre. Probá con otro. 💜</p>
+      <p class="gallery-note">Las mascotas, fotos, edades y disponibilidad de esta galería son ejemplos ilustrativos. Consultanos para conocer los animales realmente disponibles. Cada especie necesita alimentación, espacio y atención veterinaria adecuados.</p>
+    </section>
+
+    <section class="give-section section-wrap" id="dar-en-adopcion">
+      <div class="section-heading">
+        <p class="eyebrow">AYUDANOS A ENCONTRARLES UN HOGAR</p>
+        <h2>¿Tu mascota tuvo <span>crías</span>? 🐶🐱</h2>
+        <p>Si tu perro o gato tuvo bebés y querés encontrarles familias responsables, podés contactarnos. Te ayudaremos a difundirlos y coordinar el proceso.</p>
+      </div>
+
+      <div class="give-layout">
+        <div class="give-info">
+          <div class="give-illustration">🐾</div>
+          <h3>Una familia para cada pequeñito</h3>
+          <p>Completá el formulario con información básica de la camada. Nos pondremos en contacto para conversar sobre las necesidades de los animales, su edad, estado de salud y condiciones de entrega.</p>
+          <ul>
+            <li>Podés informar si son perros o gatos.</li>
+            <li>Contanos cuántas crías necesitan hogar.</li>
+            <li>Agregá su edad y una breve descripción.</li>
+            <li>Coordinaremos los siguientes pasos con vos.</li>
+          </ul>
+          <p class="notice">La publicación no es automática: primero revisaremos la información y hablaremos con la persona responsable. No se debe separar a las crías de su madre antes de que estén preparadas; consultá con un veterinario.</p>
+        </div>
+
+        <form class="form-card" id="litterForm">
+          <h3>Ofrecer una camada</h3>
+          <p>Los campos marcados con * son obligatorios.</p>
+
+          <label for="ownerName">Tu nombre *</label>
+          <input id="ownerName" name="ownerName" required maxlength="70" placeholder="¿Cómo te llamás?">
+
+          <label for="ownerPhone">Tu teléfono de contacto *</label>
+          <input id="ownerPhone" name="ownerPhone" required type="tel" maxlength="30" placeholder="Tu número de teléfono">
+
+          <div class="form-row">
+            <div>
+              <label for="animalType">¿Qué animal es? *</label>
+              <select id="animalType" name="animalType" required>
+                <option value="">Seleccionar</option>
+                <option value="Perros">Perros</option>
+                <option value="Gatos">Gatos</option>
+              </select>
+            </div>
+            <div>
+              <label for="litterCount">Cantidad de crías *</label>
+              <input id="litterCount" name="litterCount" type="number" min="1" max="30" required placeholder="Ej. 4">
+            </div>
+          </div>
+
+          <label for="litterAge">¿Qué edad tienen? *</label>
+          <input id="litterAge" name="litterAge" required maxlength="50" placeholder="Ej. 6 semanas">
+
+          <label for="litterDetails">Contanos un poco más</label>
+          <textarea id="litterDetails" name="litterDetails" rows="4" maxlength="600" placeholder="Colores, características, si están con su mamá, localidad..."></textarea>
+
+          <label class="check-label">
+            <input type="checkbox" id="ownerConsent" required>
+            Confirmo que soy responsable de estos animales y autorizo que me contacten para conversar sobre la solicitud. *
+          </label>
+
+          <button class="primary-button full-button" type="submit">Enviar solicitud por WhatsApp 💚</button>
+          <small>Se abrirá WhatsApp con el mensaje preparado para que puedas revisarlo y enviarlo.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="adopt-banner" id="proceso">
+      <div class="banner-paw">🐾</div>
+      <div>
+        <p class="eyebrow">CAMBIÁ UNA HISTORIA</p>
+        <h2>Adoptá, <span>no compres</span> ♡</h2>
+        <p>Conocé a tu futuro compañero, charlemos y coordinemos una visita.</p>
+      </div>
+      <div class="banner-points">
+        <span>♡ <small>Dales un hogar</small></span>
+        <span>✦ <small>Salvá una vida</small></span>
+        <span>🐾 <small>Multiplicá el amor</small></span>
+      </div>
+      <a class="primary-button" href="#adopciones">Conocer mascotas</a>
+    </section>
+
+    <section class="process section-wrap" id="requisitos">
+      <div class="section-heading">
+        <p class="eyebrow">UN CAMINO LLENO DE AMOR</p>
+        <h2>¿Cómo funciona la <span>adopción</span>?</h2>
+        <p>Queremos que cada encuentro se convierta en una historia feliz y responsable.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card"><span>01</span><div>🐾</div><h3>Elegí tu compañero</h3><p>Conocé las mascotas publicadas y consultanos por la que te haya gustado.</p></article>
+        <article class="step-card"><span>02</span><div>💬</div><h3>Hablemos</h3><p>Te haremos algunas preguntas para conocer tu hogar y resolver tus dudas.</p></article>
+        <article class="step-card"><span>03</span><div>🏡</div><h3>Coordiná el encuentro</h3><p>Si todo está bien, coordinaremos una visita y los pasos para la adopción.</p></article>
+        <article class="step-card"><span>04</span><div>💜</div><h3>Una nueva familia</h3><p>Prepará tu hogar y recibí a tu nuevo amigo con cariño y responsabilidad.</p></article>
+      </div>
+
+      <div class="requirements">
+        <h3>Antes de adoptar, tené en cuenta:</h3>
+        <ul>
+          <li>Contar con tiempo, paciencia y compromiso para cuidar al animal.</li>
+          <li>Disponer de un espacio seguro y adecuado.</li>
+          <li>Poder cubrir alimento, atención veterinaria y cuidados diarios.</li>
+          <li>Que todas las personas del hogar estén de acuerdo.</li>
+          <li>Asumir el compromiso de cuidarlo durante toda su vida.</li>
+        </ul>
+        <p>La organización podrá conversar con cada familia y establecer condiciones responsables según cada caso.</p>
+      </div>
+    </section>
+
+    <section class="about section-wrap" id="nosotros">
+      <div class="about-icon">💜🐾</div>
+      <div>
+        <p class="eyebrow">QUIÉNES SOMOS</p>
+        <h2>Pequeñas huellas, <span>grandes historias</span></h2>
+        <p>En Huellitas Felices creemos que todos los animales merecen cariño, cuidado y un lugar al que llamar hogar. Nuestra misión es conectar perros, gatos, conejos, aves y otros animales domésticos que necesitan una familia con personas dispuestas a darles una oportunidad. Promovemos la adopción responsable, el respeto por las necesidades de cada especie y el compromiso durante toda la vida del animal.</p>
+        <p>También queremos acompañar a quienes necesitan encontrar hogares responsables para las crías de sus mascotas, difundiendo cada caso con cuidado y compromiso.</p>
+      </div>
+    </section>
+
+    <section class="faq section-wrap" id="preguntas">
+      <div class="section-heading">
+        <p class="eyebrow">QUEREMOS AYUDARTE</p>
+        <h2>Preguntas <span>frecuentes</span></h2>
+      </div>
+
+      <details><summary>¿Puedo adoptar animales que no sean perros o gatos?</summary><p>Sí, cuando haya animales de otras especies publicados y se pueda verificar que la familia cuenta con las condiciones específicas para cuidarlos. Cada especie tiene necesidades diferentes.</p></details>
+      <details><summary>¿Adoptar tiene algún costo?</summary><p>Consultanos por cada caso. Te explicaremos si existen gastos veterinarios o requisitos asociados antes de avanzar.</p></details>
+      <details><summary>¿Puedo elegir el nombre de mi futura mascota?</summary><p>¡Claro! Podés escribir el nombre que te gustaría darle al consultar por una mascota. El nombre es una propuesta para tu futuro compañero.</p></details>
+      <details><summary>¿Puedo ofrecer las crías de mi perro o gato?</summary><p>Sí. Completá el formulario de esta página y nos pondremos en contacto para conocer la camada y evaluar cómo ayudar a encontrar familias.</p></details>
+      <details><summary>¿Las mascotas que aparecen están todas disponibles?</summary><p>La galería muestra ejemplos de diseño. La disponibilidad real debe confirmarse por WhatsApp con la organización.</p></details>
+      <details><summary>¿Qué pasa después de enviar una solicitud?</summary><p>Recibiremos tu mensaje por WhatsApp, conversaremos sobre el caso y te explicaremos los próximos pasos.</p></details>
+    </section>
+
+    <section class="contact section-wrap" id="contacto">
+      <div>
+        <p class="eyebrow">ESTAMOS PARA AYUDARTE</p>
+        <h2>¿Tenés alguna <span>consulta</span>?</h2>
+        <p>Escribinos para adoptar, ofrecer una camada o conocer más sobre nuestra iniciativa.</p>
+      </div>
+      <a class="primary-button" href="https://wa.me/5493757415396" target="_blank" rel="noopener">
+        <svg class="wa-inline" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2.7A13.1 13.1 0 0 0 4.7 22.4L3 29l6.8-1.8A13.1 13.1 0 1 0 16 2.7Zm0 23.8a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4A10.6 10.6 0 1 1 16 26.5Zm5.8-7.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.7 9.7 0 0 1-1.8-2.2c-.2-.3 0-.5.2-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-brand" href="#inicio">🐾 Huellitas <em>Felices</em></a>
+    <p>Hecho con amor para quienes tienen patitas y mucho corazón. 💜</p>
+    <small>© <span id="year"></span> Huellitas Felices · Todos los derechos reservados</small>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5493757415396" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2.7A13.1 13.1 0 0 0 4.7 22.4L3 29l6.8-1.8A13.1 13.1 0 1 0 16 2.7Zm0 23.8a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4A10.6 10.6 0 1 1 16 26.5Zm5.8-7.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.7 9.7 0 0 1-1.8-2.2c-.2-.3 0-.5.2-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/></svg>
+  </a>
+</body>
+</html>
